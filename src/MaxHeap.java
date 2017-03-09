@@ -4,26 +4,28 @@ import java.util.function.Predicate;
 /**
  * Created by Ahmed Khaled on 09/03/2017.
  */
-public class MaxBinaryHeap {
+public class MaxHeap<T extends Comparable<T>> {
 
-    private List<? extends Comparable> heap;
+    private List<T> heap;
     private int size;
 
-    public MaxBinaryHeap() {
+    public MaxHeap() {
         heap = new ArrayList<>();
         size = 0;
     }
 
-    public MaxBinaryHeap(Comparable[] array) {
+    public MaxHeap(T[] array) {
         heap = new ArrayList<>(Arrays.asList(array));
         size = array.length;
+        buildMaxHeap();
     }
 
-    public MaxBinaryHeap(Collection<? extends Comparable> array) {
+    public MaxHeap(Collection<T> array) {
         heap = new ArrayList<>(array);
+        buildMaxHeap();
     }
 
-    public void maxHeapInsert(Object element) {
+    public void maxHeapInsert(T element) {
         size++;
     }
 
@@ -31,7 +33,7 @@ public class MaxBinaryHeap {
         return heap.toArray();
     }
 
-    public Collection<?> getAsCollection() {
+    public Collection<T> getAsCollection() {
         return heap;
     }
 
