@@ -56,7 +56,9 @@ public class MaxBinaryHeap {
     }
 
     private void buildMaxHeap() {
-
+        for (int position = size / 2; position >= 0; position--) {
+            maxHeapify(position);
+        }
     }
 
     public boolean isEmpty() {
