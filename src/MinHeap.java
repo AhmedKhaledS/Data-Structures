@@ -89,10 +89,11 @@ public class MinHeap<T extends Comparable<T>> {
 
     public void heapSort() {
         for (int i = size - 1; i >= 1; i--) {
-//            Collections.swap(heap, i, 0);
+            Collections.swap(heap, i, 0);
             size--;
             minHeapifyDown(0);
         }
+        Collections.reverse(heap);
     }
 
     private void minHeapifyUp(int index, T element) {
