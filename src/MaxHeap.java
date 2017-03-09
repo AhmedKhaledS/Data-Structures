@@ -1,3 +1,6 @@
+import exceptions.HeapIsEmptyException;
+
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -29,8 +32,9 @@ public class MaxHeap<T extends Comparable<T>> {
         size++;
     }
 
-    public Object[] getAsArray() {
-        return heap.toArray();
+    public T[] getAsArray() {
+
+        return null;
     }
 
     public Collection<T> getAsCollection() {
@@ -40,7 +44,7 @@ public class MaxHeap<T extends Comparable<T>> {
     private void maxHeapify(int i) {
         int left = left(i);
         int right = right(i);
-        int largest = -1;
+        int largest;
         if (left < size && heap.get(left).compareTo(heap.get(i)) > 0 ) {
             largest = left;
         } else {
@@ -48,8 +52,6 @@ public class MaxHeap<T extends Comparable<T>> {
         }
         if (right < size && heap.get(right).compareTo(heap.get(largest)) > 0 ) {
             largest = right;
-        } else {
-            largest = i;
         }
         if (largest != i) {
             Collections.swap(heap, i, largest);
@@ -58,7 +60,7 @@ public class MaxHeap<T extends Comparable<T>> {
     }
 
     private void buildMaxHeap() {
-        for (int position = size / 2; position >= 0; position--) {
+        for (int position = size/2 - 1; position >= 0; position--) {
             maxHeapify(position);
         }
     }
@@ -67,34 +69,45 @@ public class MaxHeap<T extends Comparable<T>> {
         return size == 0;
     }
 
-    public Object extractMax() {
-        if (size <= 0)
-            return null;
+    public T extractMax() throws HeapIsEmptyException {
+        if (size < 1)
+            throw new HeapIsEmptyException("Heap is empty.");
         size--;
-        return null;
+        T maxElement = heap.get(0);
+        heap.set(0, heap.get(size - 1));
+        maxHeapify(0);
+        return maxElement;
+    }
+
+    public void insert(T element) {
+
     }
 
     public void heapSort() {
-
+        for (int i = size - 1; i >= 1; i--) {
+            Collections.swap(heap, i, 0);
+            size--;
+            maxHeapify(0);
+        }
     }
 
     private int parent(int i) {
-        return i / 2;
+        return (i - 1)/2;
     }
 
     private int left(int i) {
-        return i * 2;
+        return i*2 + 1;
     }
 
     private int right(int i) {
-        return i * 2 + 1;
+        return i*2 + 2;
     }
 
     private boolean hasLeft(int i) {
-        return i * 2 < size;
+        return i*2 + 1 < size;
     }
 
     private boolean hasRight(int i) {
-        return i * 2 + 1 < size;
+        return i*2 + 2 < size;
     }
 }
