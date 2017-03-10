@@ -68,6 +68,7 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         return maxElement;
     }
 
+    @Override
     public void insert(T element) {
         heap.add(element);
         int index = size;
@@ -76,6 +77,7 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         minHeapifyUp(index, tmp);
     }
 
+    @Override
     public void heapSort() {
         for (int i = size - 1; i >= 1; i--) {
             Collections.swap(heap, i, 0);

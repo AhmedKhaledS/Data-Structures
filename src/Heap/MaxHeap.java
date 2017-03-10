@@ -63,7 +63,7 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         maxHeapifyDown(0);
         return maxElement;
     }
-
+    @Override
     public void insert(T element) {
         heap.add(element);
         int index = size;
@@ -80,6 +80,7 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         heap.set(index, element);
     }
 
+    @Override
     public void heapSort() {
         for (int i = size - 1; i >= 1; i--) {
             Collections.swap(heap, i, 0);
