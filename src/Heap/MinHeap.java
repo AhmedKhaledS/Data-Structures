@@ -9,38 +9,29 @@ import java.util.function.Predicate;
 /**
  * Created by Ahmed Khaled on 09/03/2017.
  */
-public class MinHeap<T extends Comparable<T>> {
-
-    private List<T> heap;
-    private int size;
+public class MinHeap<T extends Comparable<T>> extends Heap<T> {
 
     public MinHeap() {
+        super(Type.MIN);
         heap = new ArrayList<>();
         size = 0;
     }
 
     public MinHeap(T[] array) {
+        super(Type.MIN);
         heap = new ArrayList<>(Arrays.asList(array));
         size = array.length;
         buildMinHeap();
     }
 
     public MinHeap(Collection<T> array) {
+        super(Type.MIN);
         heap = new ArrayList<>(array);
         buildMinHeap();
     }
 
     public void minHeapInsert(T element) {
         size++;
-    }
-
-    public T[] getAsArray() {
-
-        return null;
-    }
-
-    public Collection<T> getAsCollection() {
-        return heap;
     }
 
     private void minHeapifyDown(int i) {
@@ -65,10 +56,6 @@ public class MinHeap<T extends Comparable<T>> {
         for (int position = size/2 - 1; position >= 0; position--) {
             minHeapifyDown(position);
         }
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
     }
 
     public T extractMin() throws HeapIsEmptyException {
@@ -104,24 +91,5 @@ public class MinHeap<T extends Comparable<T>> {
             index = parent(index);
         }
         heap.set(index, element);
-    }
-    private int parent(int i) {
-        return (i - 1)/2;
-    }
-
-    private int left(int i) {
-        return i*2 + 1;
-    }
-
-    private int right(int i) {
-        return i*2 + 2;
-    }
-
-    private boolean hasLeft(int i) {
-        return i*2 + 1 < size;
-    }
-
-    private boolean hasRight(int i) {
-        return i*2 + 2 < size;
     }
 }
