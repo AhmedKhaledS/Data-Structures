@@ -1,3 +1,5 @@
+package Heap;
+
 import exceptions.HeapIsEmptyException;
 
 import java.lang.reflect.Array;
@@ -7,28 +9,28 @@ import java.util.function.Predicate;
 /**
  * Created by Ahmed Khaled on 09/03/2017.
  */
-public class MinHeap<T extends Comparable<T>> {
+public class MaxHeap<T extends Comparable<T>> {
 
     private List<T> heap;
     private int size;
 
-    public MinHeap() {
+    public MaxHeap() {
         heap = new ArrayList<>();
         size = 0;
     }
 
-    public MinHeap(T[] array) {
+    public MaxHeap(T[] array) {
         heap = new ArrayList<>(Arrays.asList(array));
         size = array.length;
-        buildMinHeap();
+        buildMaxHeap();
     }
 
-    public MinHeap(Collection<T> array) {
+    public MaxHeap(Collection<T> array) {
         heap = new ArrayList<>(array);
-        buildMinHeap();
+        buildMaxHeap();
     }
 
-    public void minHeapInsert(T element) {
+    public void maxHeapInsert(T element) {
         size++;
     }
 
@@ -41,27 +43,27 @@ public class MinHeap<T extends Comparable<T>> {
         return heap;
     }
 
-    private void minHeapifyDown(int i) {
+    private void maxHeapifyDown(int i) {
         int left = left(i);
         int right = right(i);
-        int smallest;
-        if (left < size && heap.get(left).compareTo(heap.get(i)) < 0) {
-            smallest = left;
+        int largest;
+        if (left < size && heap.get(left).compareTo(heap.get(i)) > 0 ) {
+            largest = left;
         } else {
-            smallest = i;
+            largest = i;
         }
-        if (right < size && heap.get(right).compareTo(heap.get(smallest)) < 0) {
-            smallest = right;
+        if (right < size && heap.get(right).compareTo(heap.get(largest)) > 0 ) {
+            largest = right;
         }
-        if (smallest != i) {
-            Collections.swap(heap, i, smallest);
-            minHeapifyDown(smallest);
+        if (largest != i) {
+            Collections.swap(heap, i, largest);
+            maxHeapifyDown(largest);
         }
     }
 
-    private void buildMinHeap() {
+    private void buildMaxHeap() {
         for (int position = size/2 - 1; position >= 0; position--) {
-            minHeapifyDown(position);
+            maxHeapifyDown(position);
         }
     }
 
@@ -69,13 +71,13 @@ public class MinHeap<T extends Comparable<T>> {
         return size == 0;
     }
 
-    public T extractMin() throws HeapIsEmptyException {
+    public T extractMax() throws HeapIsEmptyException {
         if (size < 1)
             throw new HeapIsEmptyException("Heap is empty.");
         size--;
         T maxElement = heap.get(0);
         heap.set(0, heap.get(size - 1));
-        minHeapifyDown(0);
+        maxHeapifyDown(0);
         return maxElement;
     }
 
@@ -84,25 +86,25 @@ public class MinHeap<T extends Comparable<T>> {
         int index = size;
         T tmp = heap.get(size);
         size++;
-        minHeapifyUp(index, tmp);
+        maxHeapifyUp(index, tmp);
+    }
+
+    private void maxHeapifyUp(int index, T element) {
+        while (index > 0 && element.compareTo( heap.get(parent(index)) ) > 0) {
+            heap.set(index, heap.get(parent(index)));
+            index = parent(index);
+        }
+        heap.set(index, element);
     }
 
     public void heapSort() {
         for (int i = size - 1; i >= 1; i--) {
             Collections.swap(heap, i, 0);
             size--;
-            minHeapifyDown(0);
+            maxHeapifyDown(0);
         }
-        Collections.reverse(heap);
     }
 
-    private void minHeapifyUp(int index, T element) {
-        while (index > 0 && element.compareTo( heap.get(parent(index)) ) < 0) {
-            heap.set(index, heap.get(parent(index)));
-            index = parent(index);
-        }
-        heap.set(index, element);
-    }
     private int parent(int i) {
         return (i - 1)/2;
     }
