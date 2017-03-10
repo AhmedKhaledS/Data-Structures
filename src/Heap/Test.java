@@ -7,16 +7,14 @@ import java.util.Collection;
  */
 public class Test {
     public static void main(String argv[]) {
-        Integer[] arr = {1, 22, 3, 2};
-        Heap.MinHeap<Integer> mx = new Heap.MinHeap<>(arr);
-        mx.insert(12);
-        mx.insert(11);
-        mx.insert(10);
-        mx.insert(36);
-        mx.insert(2);
+        String[] arr = {"a", "ahmed", "3", "2"};
+        Heap<String> mx = new MaxHeap<String>(arr);
+        mx.insert("12");
+        mx.insert("zz");
+        mx.insert("asads1");
         mx.heapSort();
-        Collection<Integer> res = mx.getAsCollection();
-        for (Integer x : res) {
+        Collection<String> res = mx.getAsCollection();
+        for (String x : res) {
             System.out.println(x);
 
         }

@@ -11,9 +11,6 @@ import java.util.function.Predicate;
  */
 public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
 
-    private List<T> heap;
-    private int size;
-
     public MaxHeap() {
         super(Type.MAX);
         heap = new ArrayList<>();
@@ -31,10 +28,6 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         super(Type.MAX);
         heap = new ArrayList<>(array);
         buildMaxHeap();
-    }
-
-    public void maxHeapInsert(T element) {
-        size++;
     }
 
     private void maxHeapifyDown(int i) {

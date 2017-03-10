@@ -25,6 +25,11 @@ public abstract class Heap<T extends Comparable<T>> {
     public Type getType() {
         return heapType;
     }
+
+    abstract void heapSort();
+
+    abstract void insert(T element);
+
     public int parent(int i) {
         return (i - 1)/2;
     }
