@@ -4,6 +4,7 @@ import heap.Heap;
 import heap.MaxHeap;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -17,7 +18,7 @@ public class HeapSort<T extends Comparable<T>> extends SortStrategy<T> {
     }
 
     @Override
-    public Collection<T> sort(Collection<T> collection) {
+    public ArrayList<T> sort(ArrayList<T> collection) {
         Heap<T> heap = new MaxHeap<T>(collection);
         heap.buildHeap();
         for (int i = heap.size - 1; i > 0; i--) {
@@ -25,6 +26,6 @@ public class HeapSort<T extends Comparable<T>> extends SortStrategy<T> {
             heap.size--;
             heap.heapify(0);
         }
-        return heap.getAsCollection();
+        return (ArrayList)heap.getAsCollection();
     }
 }

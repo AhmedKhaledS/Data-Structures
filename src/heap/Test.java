@@ -1,26 +1,38 @@
 package heap;
 
-import sorting.HeapSort;
-import sorting.SortStrategy;
+import sorting.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.IntSummaryStatistics;
 
 /**
  * Created by Ahmed Khaled on 09/03/2017.
  */
 public class Test {
     public static void main(String argv[]) {
-        Collection<String> x = new ArrayList<>();
+        ArrayList<String> x = new ArrayList<>();
         x.add("tolba");
         x.add("naggar");
         x.add("terny");
         x.add("hisham");
         x.add("khaled");
         x.add("zzz");
-        SortStrategy<String> instance = new HeapSort<>();
-        Collection<String> ans = instance.sort(x);
+        Sort<String> sortt = new Sort(new SelectionSort<String>());
+        ArrayList<String> ans = sortt.sort(x);
         for (String res : ans) {
+            System.out.println(res);
+        }
+        ArrayList<Integer> xx = new ArrayList<>();
+        xx.add(10);
+        xx.add(16);
+        xx.add(13);
+        xx.add(1);
+        xx.add(5);
+        xx.add(620);
+        Sort<Integer> sorttt = new Sort(new SelectionSort<Integer>());
+        ArrayList<Integer> anss = sorttt.sort(xx);
+        for (Integer res : anss) {
             System.out.println(res);
         }
         /*Integer[] arr = new Integer[0];

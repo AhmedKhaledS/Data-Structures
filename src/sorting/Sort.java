@@ -1,5 +1,6 @@
 package sorting;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -13,7 +14,7 @@ public class Sort<T extends Comparable<T>> {
         this.sortingDelegate = sortingDelegate;
     }
 
-    public Collection<T> sort(Collection<T> unsortedList) {
+    public ArrayList<T> sort(ArrayList<T> unsortedList) {
         return sortingDelegate.sort(unsortedList);
     }
 }
