@@ -62,7 +62,8 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
             throw new HeapIsEmptyException("heap is empty.");
         size--;
         T maxElement = heap.get(0);
-        heap.set(0, heap.get(size - 1));
+        heap.set(0, heap.get(size));
+        heap.remove(size);
         minHeapifyDown(0);
         return maxElement;
     }
