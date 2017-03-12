@@ -19,16 +19,18 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         super(Type.MAX);
         heap = new ArrayList<>(Arrays.asList(array));
         size = array.length;
-        buildMaxHeap();
+//        buildMaxHeap();
     }
 
     public MaxHeap(Collection<T> array) {
         super(Type.MAX);
         heap = new ArrayList<>(array);
-        buildMaxHeap();
+        size = array.size();
+//        buildMaxHeap();
     }
 
-    private void maxHeapifyDown(int i) {
+    @Override
+    public void heapify(int i) {
         int left = left(i);
         int right = right(i);
         int largest;
@@ -42,13 +44,14 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         }
         if (largest != i) {
             Collections.swap(heap, i, largest);
-            maxHeapifyDown(largest);
+            heapify(largest);
         }
     }
 
-    private void buildMaxHeap() {
+    @Override
+    public void buildHeap() {
         for (int position = size/2 - 1; position >= 0; position--) {
-            maxHeapifyDown(position);
+            heapify(position);
         }
     }
 
@@ -60,7 +63,7 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         T maxElement = heap.get(0);
         heap.set(0, heap.get(size));
         heap.remove(size);
-        maxHeapifyDown(0);
+        heapify(0);
         return maxElement;
     }
 
@@ -70,10 +73,10 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         int index = size;
         T tmp = heap.get(size);
         size++;
-        maxHeapifyUp(index, tmp);
+        bubbleUp(index, tmp);
     }
 
-    private void maxHeapifyUp(int index, T element) {
+    public void bubbleUp(int index, T element) {
         while (index > 0 && element.compareTo( heap.get(parent(index)) ) > 0) {
             heap.set(index, heap.get(parent(index)));
             index = parent(index);
@@ -81,12 +84,13 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
         heap.set(index, element);
     }
 
-    @Override
-    public void heapSort() {
-        for (int i = size - 1; i >= 1; i--) {
+    /*@Override
+    public Collection<T> heapSort() {
+        for (int i = size - 1; i > 0; i--) {
             Collections.swap(heap, i, 0);
             size--;
-            maxHeapifyDown(0);
+            heapify(0);
         }
-    }
+        return null;
+    }*/
 }

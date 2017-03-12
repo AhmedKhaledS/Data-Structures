@@ -1,6 +1,7 @@
 package heap;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -8,8 +9,10 @@ import java.util.List;
  */
 public abstract class Heap<T extends Comparable<T>> implements
         PriorityQueue<T> {
+    protected T[] heapArray;
+//    protected boolean isCollection = false;
     protected List<T> heap;
-    protected int size;
+    public int size;
     Type heapType;
 
     public Heap(Type heap) {
@@ -26,7 +29,13 @@ public abstract class Heap<T extends Comparable<T>> implements
         return heapType;
     }
 
-    abstract void heapSort();
+//    abstract public Collection<T> heapSort();
+    abstract public void buildHeap();
+    abstract public void heapify(int i);
+
+    public void swap(int i, int j) {
+        Collections.swap(heap, i, j);
+    }
 
     public int parent(int i) {
         return (i - 1)/2;

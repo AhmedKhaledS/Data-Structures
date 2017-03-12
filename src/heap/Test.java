@@ -1,13 +1,30 @@
 package heap;
 
+import sorting.HeapSort;
+import sorting.Sort;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Created by Ahmed Khaled on 09/03/2017.
  */
 public class Test {
     public static void main(String argv[]) {
-        Integer[] arr = new Integer[0];
+        Collection<String> x = new ArrayList<>();
+        x.add("tolba");
+        x.add("naggar");
+        x.add("terny");
+        x.add("hisham");
+        x.add("khaled");
+        x.add("zzz");
+        Sort<String> instance = new HeapSort<>();
+        Collection<String> ans = instance.sort(x);
+        for (String res : ans) {
+            System.out.println(res);
+        }
+        /*Integer[] arr = new Integer[0];
         PriorityQueue<Integer> pq = new MinHeap<>(arr);
         pq.insert(12);
         pq.insert(124);
@@ -41,7 +58,7 @@ public class Test {
         hp.heapSort();
         for (String x : hp.getAsCollection()) {
             System.out.println(x);
-        }
+        }*/
 //        mx.heapSort();
 //        Collection<String> res = mx.getAsCollection();
 //        for (String x : res) {

@@ -17,22 +17,21 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
 
     public MinHeap(T[] array) {
         super(Type.MIN);
-        heap = new ArrayList<>(Arrays.asList(array));
+        heapArray = array;
         size = array.length;
-        buildMinHeap();
+//        isCollection = false;
+//        buildMinHeap();
     }
 
     public MinHeap(Collection<T> array) {
         super(Type.MIN);
         heap = new ArrayList<>(array);
-        buildMinHeap();
+        size = array.size();
+//        isCollection = true;
+//        buildMinHeap();
     }
 
-    public void minHeapInsert(T element) {
-        size++;
-    }
-
-    private void minHeapifyDown(int i) {
+    public void heapify(int i) {
         int left = left(i);
         int right = right(i);
         int smallest;
@@ -46,13 +45,14 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         }
         if (smallest != i) {
             Collections.swap(heap, i, smallest);
-            minHeapifyDown(smallest);
+            heapify(smallest);
         }
     }
 
-    private void buildMinHeap() {
+    @Override
+    public void buildHeap() {
         for (int position = size/2 - 1; position >= 0; position--) {
-            minHeapifyDown(position);
+            heapify(position);
         }
     }
 
@@ -64,7 +64,7 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         T maxElement = heap.get(0);
         heap.set(0, heap.get(size));
         heap.remove(size);
-        minHeapifyDown(0);
+        heapify(0);
         return maxElement;
     }
 
@@ -74,20 +74,10 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         int index = size;
         T tmp = heap.get(size);
         size++;
-        minHeapifyUp(index, tmp);
+        bubbleUp(index, tmp);
     }
 
-    @Override
-    public void heapSort() {
-        for (int i = size - 1; i >= 1; i--) {
-            Collections.swap(heap, i, 0);
-            size--;
-            minHeapifyDown(0);
-        }
-        Collections.reverse(heap);
-    }
-
-    private void minHeapifyUp(int index, T element) {
+    public void bubbleUp(int index, T element) {
         while (index > 0 && element.compareTo( heap.get(parent(index)) ) < 0) {
             heap.set(index, heap.get(parent(index)));
             index = parent(index);

@@ -5,15 +5,15 @@ import java.util.Collection;
 /**
  * Created by Ahmed Khaled on 12/03/2017.
  */
-public class BubbleSort<T extends Comparable<T>> extends Sort<T> {
+public class BubbleSort<T extends Comparable<T>> implements Sort<T> {
 
     @Override
-    public void sort(T[] array) {
-
+    public T[] sort(T[] array) {
+        return null;
     }
 
     @Override
-    public void sort(Collection<T> collection) {
-
+    public Collection<T> sort(Collection<T> collection) {
+        return null;
     }
 }
