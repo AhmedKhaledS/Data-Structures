@@ -1,10 +1,8 @@
-package Heap;
+package heap;
 
 import exceptions.HeapIsEmptyException;
 
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.function.Predicate;
 
 /**
  * Created by Ahmed Khaled on 09/03/2017.
@@ -58,9 +56,10 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T> {
         }
     }
 
-    public T extractMin() throws HeapIsEmptyException {
+    @Override
+    public T extractFront() throws HeapIsEmptyException {
         if (size < 1)
-            throw new HeapIsEmptyException("Heap is empty.");
+            throw new HeapIsEmptyException("heap is empty.");
         size--;
         T maxElement = heap.get(0);
         heap.set(0, heap.get(size - 1));

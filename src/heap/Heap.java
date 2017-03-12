@@ -1,13 +1,13 @@
-package Heap;
+package heap;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Ahmed Khaled on 10/03/2017.
  */
-public abstract class Heap<T extends Comparable<T>> implements PriorityQueue {
+public abstract class Heap<T extends Comparable<T>> implements
+        PriorityQueue<T> {
     protected List<T> heap;
     protected int size;
     Type heapType;
@@ -27,8 +27,6 @@ public abstract class Heap<T extends Comparable<T>> implements PriorityQueue {
     }
 
     abstract void heapSort();
-
-    abstract void insert(T element);
 
     public int parent(int i) {
         return (i - 1)/2;
