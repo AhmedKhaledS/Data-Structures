@@ -5,9 +5,10 @@ import java.util.Collection;
 /**
  * Created by Ahmed Khaled on 12/03/2017.
  */
-public class QuickSort<T extends Comparable<T>> implements Sort<T> {
+public class QuickSort<T extends Comparable<T>> extends SortStrategy<T> {
     @Override
-    public T[] sort(T[] array) {
+    public T[] sort(T[] unsortedArray) {
+        //ToDo ...
         return null;
     }
 

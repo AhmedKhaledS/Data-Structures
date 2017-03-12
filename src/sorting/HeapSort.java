@@ -9,9 +9,9 @@ import java.util.Collection;
 /**
  * Created by Ahmed Khaled on 12/03/2017.
  */
-public class HeapSort<T extends Comparable<T>> implements Sort<T> {
+public class HeapSort<T extends Comparable<T>> extends SortStrategy<T> {
     @Override
-    public T[] sort(T[] array) {
+    public T[] sort(T[] unsortedArray) {
         //ToDo ...
         return null;
     }
@@ -25,7 +25,6 @@ public class HeapSort<T extends Comparable<T>> implements Sort<T> {
             heap.size--;
             heap.heapify(0);
         }
-
         return heap.getAsCollection();
     }
 }

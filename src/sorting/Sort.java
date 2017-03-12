@@ -3,9 +3,17 @@ package sorting;
 import java.util.Collection;
 
 /**
- * Created by Ahmed Khaled on 12/03/2017.
+ * Created by Ahmed Khaled on 13/03/2017.
  */
-public interface Sort<T extends Comparable<T>> {
-    abstract T[] sort(T[] array);
-    abstract Collection<T> sort(Collection<T> collection);
+public class Sort<T extends Comparable<T>> {
+
+    private SortStrategy<T> sortingDelegate;
+
+    public Sort(SortStrategy<T> sortingDelegate) {
+        this.sortingDelegate = sortingDelegate;
+    }
+
+    public Collection<T> sort(Collection<T> unsortedList) {
+        return sortingDelegate.sort(unsortedList);
+    }
 }

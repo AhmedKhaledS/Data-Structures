@@ -1,11 +1,10 @@
 package heap;
 
 import sorting.HeapSort;
-import sorting.Sort;
+import sorting.SortStrategy;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 /**
  * Created by Ahmed Khaled on 09/03/2017.
@@ -19,7 +18,7 @@ public class Test {
         x.add("hisham");
         x.add("khaled");
         x.add("zzz");
-        Sort<String> instance = new HeapSort<>();
+        SortStrategy<String> instance = new HeapSort<>();
         Collection<String> ans = instance.sort(x);
         for (String res : ans) {
             System.out.println(res);
