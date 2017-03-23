@@ -62,6 +62,19 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
                 + 1;
         return left;
     }
+
+    private AVLNode<T> rightRotation(AVLNode<T> node) {
+        AVLNode<T> right = node.rightChild;
+        node.rightChild = right.leftChild;
+        right.leftChild = node;
+        node.height = Math.max(node.leftChild.height, node.rightChild.height)
+                + 1;
+        right.height = Math.max(right.leftChild.height, right.rightChild.height)
+                + 1;
+        return right;
+    }
+
+    g
     @Override
     public boolean delete(T key) {
         return false;
