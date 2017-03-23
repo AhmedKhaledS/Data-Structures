@@ -14,6 +14,7 @@ public class AVLNode<T extends Comparable<T>> implements INode<T> {
         value = element;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
+        height = 0;
     }
 
     @Override
