@@ -1,4 +1,4 @@
-package trees;
+package trees.AVL;
 
 /**
  * Created by Ahmed Khaled on 23/03/2017.
