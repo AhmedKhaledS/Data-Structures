@@ -5,16 +5,25 @@ package trees.AVL;
  */
 public class Test {
     public static void main(String[] args) {
-        AVLTree<String> tree = new AVLTree<>("aaa");
-        tree.insert("ahmed");
-        tree.insert("khaled");
-        tree.insert("saad");
-        tree.insert("Hassan");
-        tree.insert("Seif");
-        tree.insert("1");
-        tree.insert("2");
-        tree.insert("333");
-        tree.insert("22");
-        System.out.println(tree.search("aaa"));
+        IDictionary dict = new Dictionary();
+        System.out.println(dict.size());
+        dict.insert("ahmed");
+        dict.insert("khaled");
+        dict.insert("Saad");
+        dict.insert("hassan");
+        dict.insert("Seif");
+        System.out.println(dict.height());
+        System.out.println(dict.size());
+        System.out.println(dict.exists("khaled"));
+        dict.insert("11");
+        dict.insert("2");
+        dict.insert("2");
+        dict.insert("333");
+        dict.delete("Saad");
+        System.out.println(dict.exists("Saad"));
+        System.out.println(dict.exists("2"));
+        System.out.println(dict.height());
+        System.out.println(dict.size());
+
     }
 }

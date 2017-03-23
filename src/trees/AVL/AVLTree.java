@@ -11,7 +11,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
     AVLNode<T> root;
 
     public AVLTree() {
-        root.height = 0;
+        root = new AVLNode<T>();
     }
     public AVLTree(T key) {
         root = new AVLNode<T>(key, null, null);
@@ -24,7 +24,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
     }
 
     private AVLNode<T> redirect(T key, AVLNode<T> current) {
-        if (current == null) {
+        if (current == null || current.getValue() == null) {
             return new AVLNode<T>(key, null, null);
         }
         int compare = key.compareTo(current.getValue());
@@ -118,7 +118,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
             node.rightChild = delete(key, node.rightChild);
         } else if (node.leftChild != null && node.rightChild != null) {
             node.setValue((T) findMinNode(node.rightChild).getValue());
-            node.rightChild = delete(node.getValue(), node);
+            node.rightChild = delete(node.getValue(), node.rightChild);
         } else {
             // Root element.
             // Handles also the deletion of the predecessor element after
@@ -152,7 +152,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
     }
 
     private boolean search(T key, AVLNode<T> node) {
-        if (node == null) return false;
+        if (node == null || node.getValue() == null) return false;
         if (node.getValue().equals(key)) return true;
         if (key.compareTo(node.getValue()) < 0) {
             return search(key, node.leftChild);

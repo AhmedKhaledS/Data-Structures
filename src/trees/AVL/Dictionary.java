@@ -9,6 +9,11 @@ public class Dictionary implements IDictionary {
 
     private IAVLTree<String> tree;
     private int size;
+
+    public Dictionary() {
+        size = 0;
+        tree = new AVLTree<>();
+    }
     @Override
     public void load(File file) {
         size = 0;
