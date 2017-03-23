@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1aefd9ef-32fb-49ce-9387-0a20e81b23e8" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/trees/AVLTree.java" afterPath="$PROJECT_DIR$/src/trees/AVL/AVLTree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/trees/IAVLTree.java" afterPath="$PROJECT_DIR$/src/trees/AVL/IAVLTree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/trees/IDictionary.java" afterPath="$PROJECT_DIR$/src/trees/AVL/IDictionary.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/trees/INode.java" afterPath="$PROJECT_DIR$/src/trees/AVL/INode.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/trees/Node.java" afterPath="$PROJECT_DIR$/src/trees/AVL/AVLNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trees/AVL/AVLNode.java" afterPath="$PROJECT_DIR$/src/trees/AVL/AVLNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trees/AVL/AVLTree.java" afterPath="$PROJECT_DIR$/src/trees/AVL/AVLTree.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,13 +32,11 @@
       <file leaf-file-name="AVLNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trees/AVL/AVLNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+            <state relative-caret-position="368">
+              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#509#510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,8 +45,8 @@
       <file leaf-file-name="AVLTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/trees/AVL/AVLTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="371">
+              <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -922,21 +916,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trees/AVL/AVLNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        <state relative-caret-position="368">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trees/AVL/AVLTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="371">
+          <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
           <folding />
         </state>
       </provider>

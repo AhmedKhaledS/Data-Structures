@@ -1,5 +1,7 @@
 package trees.AVL;
 
+import java.rmi.MarshalException;
+
 /**
  * Created by Ahmed Khaled on 23/03/2017.
  */
@@ -27,10 +29,39 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
     }
 
     private AVLNode<T> rebalance(AVLNode<T> node) {
-        return null;
+        if (node == null) return node;
+        if (node.leftChild.height - node.rightChild.height
+                > MAX_BALANCE_FACTOR) {
+            if (node.leftChild.leftChild.height >=  node.leftChild
+                    .rightChild.height) {
+                node = leftRotation(node);
+            } else {
+                node = leftRightRotation(node);
+            }
+        } else if (node.rightChild.height - node.leftChild.height
+                > MAX_BALANCE_FACTOR) {
+            if (node.rightChild.rightChild.height >=  node.rightChild
+                    .leftChild.height) {
+                node = rightRotation(node);
+            } else {
+                node = rightLeftRotation(node);
+            }
+        }
+        node.height = Math.max(node.leftChild.height, node.rightChild.height)
+                + 1;
+        return node;
     }
 
-
+    private AVLNode<T> leftRotation(AVLNode<T> node) {
+        AVLNode<T> left = node.leftChild;
+        node.leftChild = left.rightChild;
+        left.rightChild = node;
+        node.height = Math.max(node.leftChild.height, node.rightChild.height)
+                + 1;
+        left.height = Math.max(left.leftChild.height, left.rightChild.height)
+                + 1;
+        return left;
+    }
     @Override
     public boolean delete(T key) {
         return false;

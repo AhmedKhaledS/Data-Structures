@@ -8,7 +8,7 @@ public class AVLNode<T extends Comparable<T>> implements INode<T> {
     public AVLNode leftChild;
     public AVLNode rightChild;
     private T value;
-    private int height;
+    public int height;
 
     public AVLNode(T element, AVLNode<T> leftChild, AVLNode<T> rightChild) {
         value = element;
@@ -29,10 +29,6 @@ public class AVLNode<T extends Comparable<T>> implements INode<T> {
     @Override
     public T getValue() {
         return this.value;
-    }
-
-    public int getHeight() {
-        return this.height;
     }
 
     @Override
