@@ -10,6 +10,13 @@ public class AVLNode<T extends Comparable<T>> implements INode<T> {
     private T value;
     public int height;
 
+    public AVLNode() {
+        value = null;
+        this.leftChild = null;
+        this.rightChild = null;
+        height = 0;
+    }
+
     public AVLNode(T element, AVLNode<T> leftChild, AVLNode<T> rightChild) {
         value = element;
         this.leftChild = leftChild;

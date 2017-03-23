@@ -9,10 +9,18 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
 
     private final int MAX_BALANCE_FACTOR = 1;
     AVLNode<T> root;
+
+    public AVLTree() {
+        root.height = 0;
+    }
+    public AVLTree(T key) {
+        root = new AVLNode<T>(key, null, null);
+        root.height = 0;
+    }
     @Override
     public void insert(T key) {
         if (key == null) return;
-        redirect(key, root);
+        root = redirect(key, root);
     }
 
     private AVLNode<T> redirect(T key, AVLNode<T> current) {
@@ -23,31 +31,31 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         if (compare < 0) {
             current.leftChild = redirect(key, current.leftChild);
         } else if (compare > 0 ) {
-            current.leftChild = redirect(key, current.leftChild);
+            current.rightChild = redirect(key, current.rightChild);
         }
         return rebalance(current);
     }
 
     private AVLNode<T> rebalance(AVLNode<T> node) {
         if (node == null) return node;
-        if (node.leftChild.height - node.rightChild.height
+        if (height(node.leftChild) - height(node.rightChild)
                 > MAX_BALANCE_FACTOR) {
-            if (node.leftChild.leftChild.height >=  node.leftChild
-                    .rightChild.height) {
+            if (height(node.leftChild.leftChild)>=  height(node.leftChild
+                    .rightChild)) {
                 node = leftRotation(node);
             } else {
                 node = leftRightRotation(node);
             }
-        } else if (node.rightChild.height - node.leftChild.height
+        } else if (height(node.rightChild) - height(node.leftChild)
                 > MAX_BALANCE_FACTOR) {
-            if (node.rightChild.rightChild.height >=  node.rightChild
-                    .leftChild.height) {
+            if (height(node.rightChild.rightChild) >=  height(node.rightChild
+                    .leftChild)) {
                 node = rightRotation(node);
             } else {
                 node = rightLeftRotation(node);
             }
         }
-        node.height = Math.max(node.leftChild.height, node.rightChild.height)
+        node.height = Math.max(height(node.leftChild), height(node.rightChild))
                 + 1;
         return node;
     }
@@ -56,9 +64,9 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         AVLNode<T> left = node.leftChild;
         node.leftChild = left.rightChild;
         left.rightChild = node;
-        node.height = Math.max(node.leftChild.height, node.rightChild.height)
+        node.height = Math.max(height(node.leftChild), height(node.rightChild))
                 + 1;
-        left.height = Math.max(left.leftChild.height, left.rightChild.height)
+        left.height = Math.max(height(left.leftChild), height(left.rightChild))
                 + 1;
         return left;
     }
@@ -67,9 +75,9 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         AVLNode<T> right = node.rightChild;
         node.rightChild = right.leftChild;
         right.leftChild = node;
-        node.height = Math.max(node.leftChild.height, node.rightChild.height)
+        node.height = Math.max(height(node.leftChild), height(node.rightChild))
                 + 1;
-        right.height = Math.max(right.leftChild.height, right.rightChild.height)
+        right.height = Math.max(height(right.leftChild), height(right.rightChild))
                 + 1;
         return right;
     }
@@ -83,23 +91,83 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         node.rightChild = leftRotation(node.rightChild);
         return rightRotation(node);
     }
+
+    private int height(AVLNode<T> node) {
+        if (node == null) {
+            return -1;
+        }
+        return  node.height;
+    }
     @Override
     public boolean delete(T key) {
-        return false;
+        if (!search(key)) {
+            return false;
+        }
+        root = delete(key, root);
+        return true;
+    }
+
+    private AVLNode<T> delete(T key, AVLNode<T> node) {
+        if (node == null) {
+            return node;
+        }
+        int compare = key.compareTo(node.getValue());
+        if (compare < 0) {
+            node.leftChild = delete(key, node.leftChild);
+        } else if (compare > 0) {
+            node.rightChild = delete(key, node.rightChild);
+        } else if (node.leftChild != null && node.rightChild != null) {
+            node.setValue((T) findMinNode(node.rightChild).getValue());
+            node.rightChild = delete(node.getValue(), node);
+        } else {
+            // Root element.
+            // Handles also the deletion of the predecessor element after
+            // copying its value.
+            // The predecessor is found as the minimum element in the right
+            // subtree of the desired node to be deleted.
+            if (node.leftChild != null) {
+                node = node.leftChild;
+            } else {
+                node = node.rightChild;
+            }
+        }
+        return rebalance(node);
+    }
+
+    /**
+     * Finds the minimum node in the right subtree (predecessor).
+     * @param node root of the subtree.
+     * @return returns the predecessor node.
+     */
+    private AVLNode<T> findMinNode(AVLNode<T> node) {
+        if (node.leftChild == null) {
+            return node;
+        }
+        return findMinNode(node.leftChild);
     }
 
     @Override
     public boolean search(T key) {
-        return false;
+        return search(key, root);
+    }
+
+    private boolean search(T key, AVLNode<T> node) {
+        if (node == null) return false;
+        if (node.getValue().equals(key)) return true;
+        if (key.compareTo(node.getValue()) < 0) {
+            return search(key, node.leftChild);
+        } else {
+            return search(key, node.rightChild);
+        }
     }
 
     @Override
     public int height() {
-        return 0;
+        return root.height;
     }
 
     @Override
     public INode<T> getTree() {
-        return null;
+        return root;
     }
 }
