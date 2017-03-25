@@ -1,7 +1,5 @@
 package trees.AVL;
 
-import java.rmi.MarshalException;
-
 /**
  * Created by Ahmed Khaled on 23/03/2017.
  */
@@ -13,34 +11,35 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
     public AVLTree() {
         root = new AVLNode<T>();
     }
-    public AVLTree(T key) {
+    public AVLTree(final T key) {
         root = new AVLNode<T>(key, null, null);
         root.height = 0;
     }
     @Override
-    public void insert(T key) {
+    public void insert(final T key) {
         if (key == null) return;
-        root = redirect(key, root);
+        root = insert(key, root);
     }
 
-    private AVLNode<T> redirect(T key, AVLNode<T> current) {
+    private AVLNode<T> insert(final T key, final AVLNode<T> current) {
         if (current == null || current.getValue() == null) {
             return new AVLNode<T>(key, null, null);
         }
         int compare = key.compareTo(current.getValue());
         if (compare < 0) {
-            current.leftChild = redirect(key, current.leftChild);
+            current.leftChild = insert(key, current.leftChild);
         } else if (compare > 0 ) {
-            current.rightChild = redirect(key, current.rightChild);
+            current.rightChild = insert(key, current.rightChild);
         }
         return rebalance(current);
     }
 
     private AVLNode<T> rebalance(AVLNode<T> node) {
         if (node == null) return node;
+        // Checks if there exists violation in AVL properties.
         if (height(node.leftChild) - height(node.rightChild)
                 > MAX_BALANCE_FACTOR) {
-            if (height(node.leftChild.leftChild)>=  height(node.leftChild
+            if (height(node.leftChild.leftChild) >=  height(node.leftChild
                     .rightChild)) {
                 node = leftRotation(node);
             } else {
@@ -60,7 +59,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return node;
     }
 
-    private AVLNode<T> leftRotation(AVLNode<T> node) {
+    private AVLNode<T> leftRotation(final AVLNode<T> node) {
         AVLNode<T> left = node.leftChild;
         node.leftChild = left.rightChild;
         left.rightChild = node;
@@ -71,7 +70,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return left;
     }
 
-    private AVLNode<T> rightRotation(AVLNode<T> node) {
+    private AVLNode<T> rightRotation(final AVLNode<T> node) {
         AVLNode<T> right = node.rightChild;
         node.rightChild = right.leftChild;
         right.leftChild = node;
@@ -82,12 +81,12 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return right;
     }
 
-    private AVLNode<T> leftRightRotation(AVLNode<T> node) {
+    private AVLNode<T> leftRightRotation(final AVLNode<T> node) {
         node.leftChild = rightRotation(node.leftChild);
         return leftRotation(node);
     }
 
-    private AVLNode<T> rightLeftRotation(AVLNode<T> node) {
+    private AVLNode<T> rightLeftRotation(final AVLNode<T> node) {
         node.rightChild = leftRotation(node.rightChild);
         return rightRotation(node);
     }
@@ -107,7 +106,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return true;
     }
 
-    private AVLNode<T> delete(T key, AVLNode<T> node) {
+    private AVLNode<T> delete(final T key, AVLNode<T> node) {
         if (node == null) {
             return node;
         }
@@ -139,7 +138,7 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
      * @param node root of the subtree.
      * @return returns the predecessor node.
      */
-    private AVLNode<T> findMinNode(AVLNode<T> node) {
+    private AVLNode<T> findMinNode(final AVLNode<T> node) {
         if (node.leftChild == null) {
             return node;
         }

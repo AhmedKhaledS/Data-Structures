@@ -14,14 +14,14 @@ public class Test {
         dict.insert("Seif");
         System.out.println(dict.height());
         System.out.println(dict.size());
-        System.out.println(dict.exists("khaled"));
+        System.out.println(dict.exists("ahmed"));
         dict.insert("11");
         dict.insert("2");
         dict.insert("2");
         dict.insert("333");
         dict.delete("Saad");
+        System.out.println(dict.exists("Seif"));
         System.out.println(dict.exists("Saad"));
-        System.out.println(dict.exists("2"));
         System.out.println(dict.height());
         System.out.println(dict.size());
 
