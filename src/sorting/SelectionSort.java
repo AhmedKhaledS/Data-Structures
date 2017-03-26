@@ -8,24 +8,26 @@ import java.util.Collections;
  */
 public class SelectionSort<T extends Comparable<T>> extends SortStrategy<T> {
 
-    public SelectionSort() {}
-    @Override
-    public T[] sort(T[] unsortedArray) {
-        //ToDo ...
-        return null;
-    }
+	public SelectionSort() {
+	}
 
-    @Override
-    public ArrayList<T> sort(ArrayList<T> collection) {
-        for (int i = 0; i < collection.size(); i++) {
-            int min = i;
-            for (int j = i + 1; j < collection.size(); j++) {
-                if (collection.get(j).compareTo(collection.get(min)) < 0) {
-                    min = j;
-                }
-            }
-            Collections.swap(collection, i, min);
-        }
-        return collection;
-    }
+	@Override
+	public T[] sort(T[] unsortedArray) {
+		//ToDo ...
+		return null;
+	}
+
+	@Override
+	public ArrayList<T> sort(ArrayList<T> collection) {
+		for (int i = 0; i < collection.size(); i++) {
+			int min = i;
+			for (int j = i + 1; j < collection.size(); j++) {
+				if (collection.get(j).compareTo(collection.get(min)) < 0) {
+					min = j;
+				}
+			}
+			Collections.swap(collection, i, min);
+		}
+		return collection;
+	}
 }

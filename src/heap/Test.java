@@ -10,7 +10,7 @@ import java.util.IntSummaryStatistics;
  * Created by Ahmed Khaled on 09/03/2017.
  */
 public class Test {
-    public static void main(String argv[]) {
+	public static void main(String argv[]) {
 
 //        // Heap Sort
 //        ArrayList<String> x1 = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Test {
 //        }
 
         /*ArrayList<Integer> x2 = new ArrayList<>();
-        x2.add(1);
+		x2.add(1);
         x2.add(2);
         x2.add(3);
         x2.add(3);
@@ -92,6 +92,6 @@ public class Test {
 //            System.out.println(x);
 //
 //        }
-    }
+	}
 }
 
