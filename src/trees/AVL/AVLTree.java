@@ -6,21 +6,38 @@ package trees.AVL;
 public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
 
     private final int MAX_BALANCE_FACTOR = 1;
-    AVLNode<T> root;
+    private AVLNode<T> root;
 
+    /**
+     * Default constructor.
+     */
     public AVLTree() {
         root = new AVLNode<T>();
     }
+
+    /**
+     * Overriden constructor which have parameter the key of the tree root.
+     * @param key the value of the root node of the AVL tree.
+     */
     public AVLTree(final T key) {
         root = new AVLNode<T>(key, null, null);
         root.height = 0;
     }
+
     @Override
     public void insert(final T key) {
         if (key == null) return;
         root = insert(key, root);
     }
 
+
+
+    /**
+     * Insert the given value using the key.
+     * @param key the value to be inserted in the tree.
+     * @param current the current root of the given subtree.
+     * @return {@link AVLNode} returns the root of the given subtree.
+     */
     private AVLNode<T> insert(final T key, final AVLNode<T> current) {
         if (current == null || current.getValue() == null) {
             return new AVLNode<T>(key, null, null);
@@ -34,6 +51,13 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return rebalance(current);
     }
 
+    /**
+     * Balances the given subtree if the balance factor exceeds the maximum
+     * desired value.
+     * @param node {@link AVLNode}the root of the the given subtree to balance.
+     * @return {@link AVLNode} returns the new root after balancing the given
+     * subtree.
+     */
     private AVLNode<T> rebalance(AVLNode<T> node) {
         if (node == null) return node;
         // Checks if there exists violation in AVL properties.
@@ -59,6 +83,13 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return node;
     }
 
+    /**
+     * Balances the given subtree using left rotation technique.
+     * @param node {@link AVLNode} the given node of subtree required to be
+     * rebalanced.
+     * @return {@link AVLNode} returns the new root of the given subtree
+     * after balancing (rotation).
+     */
     private AVLNode<T> leftRotation(final AVLNode<T> node) {
         AVLNode<T> left = node.leftChild;
         node.leftChild = left.rightChild;
@@ -70,6 +101,13 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return left;
     }
 
+    /**
+     * Balances the given subtree using right rotation technique.
+     * @param node {@link AVLNode} the given node of subtree required to be
+     * rebalanced.
+     * @return {@link AVLNode} returns the new root of the given subtree
+     * after balancing (rotation).
+     */
     private AVLNode<T> rightRotation(final AVLNode<T> node) {
         AVLNode<T> right = node.rightChild;
         node.rightChild = right.leftChild;
@@ -81,16 +119,37 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return right;
     }
 
+    /**
+     * Performs balance to the given subtree after double rotation technique
+     * (left then right rotations).
+     * @param node {@link AVLNode} the given node of subtree required to be
+     * rebalanced.
+     * @return {@link AVLNode} returns the new root of the given subtree
+     * after balancing (rotation).
+     */
     private AVLNode<T> leftRightRotation(final AVLNode<T> node) {
         node.leftChild = rightRotation(node.leftChild);
         return leftRotation(node);
     }
 
+    /**
+     * Performs balance to the given subtree after double rotation technique
+     * (right then left rotations).
+     * @param node {@link AVLNode} the given node of subtree required to be
+     * rebalanced.
+     * @return {@link AVLNode} returns the new root of the given subtree
+     * after balancing (rotation).
+     */
     private AVLNode<T> rightLeftRotation(final AVLNode<T> node) {
         node.rightChild = leftRotation(node.rightChild);
         return rightRotation(node);
     }
 
+    /**
+     * Computes the height of the given node in the tree.
+     * @param node {@link AVLNode} the given node to compute the height.
+     * @return returns the height of the given node in the tree.
+     */
     private int height(AVLNode<T> node) {
         if (node == null) {
             return -1;
@@ -106,6 +165,12 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return true;
     }
 
+    /**
+     * Delete the key (if exists).
+     * @param key the key of the node.
+     * @param node {@link AVLNode} the current root of the given subtree.
+     * @return {@link AVLNode} true if node deleted, false if not exists.
+     */
     private AVLNode<T> delete(final T key, AVLNode<T> node) {
         if (node == null) {
             return node;
@@ -150,6 +215,12 @@ public class AVLTree<T extends Comparable<T>> implements IAVLTree<T> {
         return search(key, root);
     }
 
+    /**
+     * Search for a specific element using the key in the tree.
+     * @param key the key of the node.
+     * @param node {@link AVLNode} The current root of the given subtree.
+     * @return true if the key exists, false otherwise.
+     */
     private boolean search(T key, AVLNode<T> node) {
         if (node == null || node.getValue() == null) return false;
         if (node.getValue().equals(key)) return true;
