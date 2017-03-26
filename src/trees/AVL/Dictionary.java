@@ -1,6 +1,9 @@
 package trees.AVL;
 
-import java.io.File;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 /**
  * Created by Ahmed Khaled on 23/03/2017.
@@ -10,6 +13,9 @@ public class Dictionary implements IDictionary {
     private IAVLTree<String> tree;
     private int size;
 
+    /**
+     * Default constructor initializes the the AVL tree.
+     */
     public Dictionary() {
         size = 0;
         tree = new AVLTree<>();
@@ -18,6 +24,14 @@ public class Dictionary implements IDictionary {
     public void load(File file) {
         size = 0;
         tree = new AVLTree<>();
+        try (BufferedReader buffer = new BufferedReader(new FileReader(file))) {
+            String word;
+            while ((word = buffer.readLine()) != null) {
+                tree.insert(word);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
