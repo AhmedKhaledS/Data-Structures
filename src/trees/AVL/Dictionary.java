@@ -20,6 +20,7 @@ public class Dictionary implements IDictionary {
         size = 0;
         tree = new AVLTree<>();
     }
+
     @Override
     public void load(File file) {
         size = 0;
