@@ -1,8 +1,12 @@
 package sssp;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Ahmed Khaled on 21/06/2017.
@@ -12,7 +16,7 @@ public class Graph<T> implements IGraph {
 	private int noOfVertices, noOfEdges;
 	private List<Edge<T>> edges;
 	private List<AdjacentNodeList> adjacencyList;
-
+	private Graph<Integer> graph;
 	/**
 	 * Main Constructor to initialize the data-fields with default values.
 	 */
@@ -120,7 +124,65 @@ public class Graph<T> implements IGraph {
 
 	@Override
 	public void readGraph(File file) {
+		try {
+			Scanner input = new Scanner(file);
+			int n, m;
+			n = input.nextInt();
+			m = input.nextInt();
+			graph = new Graph<>(n, m);
+			for (int i = 0; i < m; i++) {
+				int src, dest, weight;
+				src = input.nextInt();
+				dest = input.nextInt();
+				weight = input.nextInt();
+				graph.addEdge(src, dest, weight);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
+	public void bellmanFord(File file) {
+		int[] dist = new int[graph.size()];
+		try {
+			PrintWriter writer = new PrintWriter(file.getName().substring(0,
+					file.getName().length() - 4) + "_output"
+					+ ".txt", "UTF-8");
+			writer.write(Boolean.toString(graph.runBellmanFord(0, dist)));
+			writer.println();
+			int[] distances = BellmanFord.getShortestDistanceArray();
+			if (!BellmanFord.containsNegativeCycles) {
+				for (int i = 0; i < graph.size(); i++) {
+					writer.write(distances[i] + " ");
+				}
+			}
+			writer.close();
+		} catch (IOException e) {
+			// do something
+		}
+	}
+
+	public void dijkstra(File file) {
+		int[] dist = new int[graph.size()];
+		try {
+			PrintWriter writer = new PrintWriter(file.getName().substring(0,
+					file.getName().length() - 4) + "_output"
+					+ ".txt", "UTF-8");
+			graph.runDijkstra(0, dist);
+			int[] shortestDistances = Dijkstra.getShortestDistanceArray();
+			for (int i = 0; i < shortestDistances.length; i++) {
+				writer.write(Integer.toString(shortestDistances[i]) + " ");
+			}
+			writer.println();
+			ArrayList<Integer> processedOrder = Dijkstra
+					.getProcessedOrder();
+			for (Integer tmp : processedOrder) {
+				writer.write(tmp.toString() + " ");
+			}
+			writer.close();
+		} catch (IOException e) {
+			// do something
+		}
 	}
 
 }
