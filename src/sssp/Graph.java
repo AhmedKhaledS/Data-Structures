@@ -1,16 +1,16 @@
 package sssp;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Ahmed Khaled on 21/06/2017.
  */
-public class Graph<T> {
+public class Graph<T> implements IGraph {
 
 	private int noOfVertices, noOfEdges;
 	private List<Edge<T>> edges;
-	private List<Integer> vertices;
 	private List<AdjacentNodeList> adjacencyList;
 
 	/**
@@ -20,15 +20,13 @@ public class Graph<T> {
 		this.noOfVertices = 0;
 		this.noOfEdges = 0;
 		edges = new ArrayList<>();
-		vertices = new ArrayList<>();
 		adjacencyList = new ArrayList<>();
 	}
 
-	public Graph(int noOfEdges, int noOfVertices) {
+	public Graph(int noOfVertices, int noOfEdges) {
 		this.noOfVertices = noOfVertices;
 		this.noOfEdges = noOfEdges;
 		edges = new ArrayList<>(noOfEdges);
-		vertices = new ArrayList<>(noOfVertices);
 		adjacencyList = new ArrayList<>(noOfVertices);
 	}
 
@@ -45,19 +43,53 @@ public class Graph<T> {
 		return adjacencyList;
 	}
 
-	public ArrayList<Integer> getVertices() {
-		return (ArrayList<Integer>) vertices;
-	}
 
-	public int size() {
-		return this.noOfVertices;
-	}
-
-	public AdjacentNodeList getNeighbours(int vertexID) {
+	public AdjacentNodeList getNeighbourVertices(int vertexID) {
 		return this.adjacencyList.get(vertexID);
 	}
 
 	public Edge<Integer> getEdges() {
 		return (Edge<Integer>) this.edges;
 	}
+
+	@Override
+	public ArrayList<Integer> getVertices() {
+		List<Integer> vertices = new ArrayList<>();
+		for (int i = 0; i < noOfVertices; i++) {
+			vertices.add(i);
+		}
+		return (ArrayList<Integer>) vertices;
+	}
+
+	@Override
+	public int size() {
+		return this.noOfVertices;
+	}
+
+	@Override
+	public ArrayList<Integer> getNeighbors(int v) {
+		return getNeighbourVertices(v).getAdjNodes();
+	}
+
+	@Override
+	public void runDijkstra(int src, int[] distances) {
+
+	}
+
+
+	@Override
+	public ArrayList<Integer> getDijkstraProcessedOrder() {
+		return null;
+	}
+
+	@Override
+	public boolean runBellmanFord(int src, int[] distances) {
+		return false;
+	}
+
+	@Override
+	public void readGraph(File file) {
+
+	}
+
 }
