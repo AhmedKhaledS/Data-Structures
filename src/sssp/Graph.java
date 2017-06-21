@@ -30,7 +30,7 @@ public class Graph<T> implements IGraph {
 		adjacencyList = new ArrayList<>(noOfVertices);
 	}
 
-	public void addEdge(int src, int dest, double weight) {
+	public void addEdge(int src, int dest, int weight) {
 		edges.add((Edge<T>) new Edge<Integer>(src, dest, weight));
 		if (adjacencyList.get(src) == null ) {
 			AdjacentNodeList node = adjacencyList.get(src);
@@ -48,8 +48,12 @@ public class Graph<T> implements IGraph {
 		return this.adjacencyList.get(vertexID);
 	}
 
-	public Edge<Integer> getEdges() {
-		return (Edge<Integer>) this.edges;
+	public List<Edge<T>> getEdges() {
+		return this.edges;
+	}
+
+	public int getNoOfEdges() {
+		return this.noOfEdges;
 	}
 
 	@Override
@@ -84,7 +88,7 @@ public class Graph<T> implements IGraph {
 
 	@Override
 	public boolean runBellmanFord(int src, int[] distances) {
-		return false;
+		return BellmanFord.run(this, src, distances);
 	}
 
 	@Override

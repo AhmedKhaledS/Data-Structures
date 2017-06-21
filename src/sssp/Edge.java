@@ -6,8 +6,8 @@ package sssp;
  */
 public class Edge<T> {
 
-	private T source, destination;
-	private double weight;
+	public T source, destination;
+	public int weight;
 
 	/**
 	 * Constructor that initialized the current edge with required information.
@@ -15,7 +15,7 @@ public class Edge<T> {
 	 * @param destination represents the destination node of this edge.
 	 * @param weight represents the distance between the two nodes.
 	 */
-	public Edge(T source, T destination, double weight) {
+	public Edge(T source, T destination, int weight) {
 		this.source = source;
 		this.destination = destination;
 		this.weight = weight;
@@ -25,7 +25,8 @@ public class Edge<T> {
 	 * Sets a new weight of this edge.
 	 * @param newWeight represents the new weight of this edge.
 	 */
-	public void updateWeight(double newWeight) {
+	public void updateWeight(int newWeight) {
 		this.weight = newWeight;
 	}
+
 }
