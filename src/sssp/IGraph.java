@@ -51,5 +51,5 @@ public interface IGraph {
 	 * @param distances An array to be filled with distances from src to all vertices in the graph
 	 * @return False if the graph contains a negative cycle. True otherwise.
 	 */
-	public boolean runBellmanFord(int src, int[] distances);
+	public int[] runBellmanFord(int src, int[] distances);
 }

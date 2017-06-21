@@ -12,7 +12,10 @@ public class AdjacentNodeList {
 	private List<Integer> adjacentNodes;
 
 
-	public AdjacentNodeList() {}
+	public AdjacentNodeList() {
+		adjNodes = new ArrayList<>();
+		adjacentNodes = new ArrayList<>();
+	}
 	/**
 	 * Constructor to initialize the set of neighbor nodes with the passed data.
 	 * @param nodes the array-list that holds the neighbour nodes with data.

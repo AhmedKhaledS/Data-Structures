@@ -7,7 +7,9 @@ import java.util.ArrayList;
  */
 public class BellmanFord {
 
-	public static boolean run(Graph graph, int src, int[] distances) {
+	static boolean containsNegativeCycles = false;
+
+	public static int[] run(Graph graph, int src, int[] distances) {
 		for (int i = 0; i < graph.size(); i++) {
 			distances[i] = Integer.MAX_VALUE;
 		}
@@ -27,7 +29,6 @@ public class BellmanFord {
 			}
 		}
 
-		boolean noNegativeCycles = true;
 		ArrayList<Edge<Integer>> setOfEdges
 				= (ArrayList<Edge<Integer>>) graph.getEdges();
 		for (Edge<Integer> e : setOfEdges) {
@@ -37,10 +38,10 @@ public class BellmanFord {
 			if (distances[source] != Integer.MAX_VALUE
 					&& distances[source] + weight
 					< distances[destination]) {
-				noNegativeCycles = false;
+				BellmanFord.containsNegativeCycles = true;
 				break;
 			}
 		}
-		return noNegativeCycles;
+		return distances;
 	}
 }
