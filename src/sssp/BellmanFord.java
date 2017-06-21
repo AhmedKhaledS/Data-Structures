@@ -7,8 +7,23 @@ import java.util.ArrayList;
  */
 public class BellmanFord {
 
+	/**
+	 * Boolean to determeine whether the assigned graph has negative cycles
+	 * or not.
+	 */
 	static boolean containsNegativeCycles = false;
 
+	/**
+	 * Runs Bellman-Ford Single-Source-Shortest-Path algorithm to the
+	 * assigned graph and returns the the shortest distances from the source
+	 * node to all other nodes.
+	 * @param graph Represents the graph structure.
+	 * @param src The source node to travel from.
+	 * @param distances The array containing all distances to other nodes
+	 *                     with respect to the source node.
+	 * @return Returns the shortest path array from the source node to all
+	 *         other nodes.
+	 */
 	public static int[] run(Graph graph, int src, int[] distances) {
 		for (int i = 0; i < graph.size(); i++) {
 			distances[i] = Integer.MAX_VALUE;

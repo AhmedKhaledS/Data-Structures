@@ -23,6 +23,11 @@ public class Graph<T> implements IGraph {
 		adjacencyList = new ArrayList<>();
 	}
 
+	/**
+	 * Constructor to initialize tthe number of nodes and edges in the graph.
+	 * @param noOfVertices The number nodes in the graph.
+	 * @param noOfEdges The number of edges in the graph.
+	 */
 	public Graph(int noOfVertices, int noOfEdges) {
 		this.noOfVertices = noOfVertices;
 		this.noOfEdges = noOfEdges;
@@ -33,24 +38,47 @@ public class Graph<T> implements IGraph {
 		}
 	}
 
+	/**
+	 * Adds new Edge to the graph with the given data.
+	 * @param src Represents the parent node to be added.
+	 * @param dest Represents the child node to be added.
+	 * @param weight Represents the weight between the Parent and the Child
+	 *                  node.
+	 */
 	public void addEdge(int src, int dest, int weight) {
 		edges.add((Edge<T>) new Edge<Integer>(src, dest, weight));
 		adjacencyList.get(src).addNode(dest, weight);
 	}
 
+	/**
+	 * Gets the graph as adjacency-list data structure.
+	 * @return Return the assigned graph in adjacency list representation.
+	 */
 	public List<AdjacentNodeList> getAsAdjacencyList() {
 		return adjacencyList;
 	}
 
-
+	/**
+	 * Gets the all neighbour nodes(Children) to the given node(Parent).
+	 * @param vertexID The ID of the parent vertex.
+	 * @return Returns the adjacency-list representation of the graph.
+	 */
 	public AdjacentNodeList getNeighbourVertices(int vertexID) {
 		return this.adjacencyList.get(vertexID);
 	}
 
+	/**
+	 * Gets the graph in array-list of edges structure.
+	 * @return Return the list contatining all edges in the graph.
+	 */
 	public List<Edge<T>> getEdges() {
 		return this.edges;
 	}
 
+	/**
+	 * This returns the number of edges in the graph.
+	 * @return Returns the number of edges in the graph.
+	 */
 	public int getNoOfEdges() {
 		return this.noOfEdges;
 	}

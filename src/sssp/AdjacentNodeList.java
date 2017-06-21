@@ -36,11 +36,21 @@ public class AdjacentNodeList {
 		return (ArrayList<Integer>) adjacentNodes;
 	}
 
+	/**
+	 * Adds new node the neighbour-list.
+	 * @param node The new node-ID to be added.
+	 * @param weight The weight of this node w.r.t the parent node.
+	 */
 	public void addNode(int node, double weight) {
 		adjNodes.add(new Pair<>(node, weight));
 		adjacentNodes.add(node);
 	}
 
+	/**
+	 * Gets the node number "index" linked by the parent node.
+	 * @param index The node number linked by the parent node.
+	 * @return Returns the pre-specified node holding its data.
+	 */
 	public Pair<Integer, Double> getAdjNode(int index) {
 		return this.adjNodes.get(index);
 	}
