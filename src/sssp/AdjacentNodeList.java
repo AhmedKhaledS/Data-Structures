@@ -11,6 +11,8 @@ public class AdjacentNodeList {
 	private List<Pair<Integer, Double>> adjNodes;
 	private List<Integer> adjacentNodes;
 
+
+	public AdjacentNodeList() {}
 	/**
 	 * Constructor to initialize the set of neighbor nodes with the passed data.
 	 * @param nodes the array-list that holds the neighbour nodes with data.
@@ -34,6 +36,10 @@ public class AdjacentNodeList {
 	public void addNode(int node, double weight) {
 		adjNodes.add(new Pair<>(node, weight));
 		adjacentNodes.add(node);
+	}
+
+	public Pair<Integer, Double> getAdjNode(int index) {
+		return this.adjNodes.get(index);
 	}
 
 }
