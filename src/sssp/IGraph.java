@@ -49,7 +49,7 @@ public interface IGraph {
 	 * Runs the Bellman-Ford single-source shortest path algorithm on the graph
 	 * @param src ID of the source vertex for the shortest path algorithm
 	 * @param distances An array to be filled with distances from src to all vertices in the graph
-	 * @return False if the graph contains a negative cycle. True otherwise.
+	 * @return True if the graph contains a negative cycle. False otherwise.
 	 */
-	public int[] runBellmanFord(int src, int[] distances);
+	public boolean runBellmanFord(int src, int[] distances);
 }

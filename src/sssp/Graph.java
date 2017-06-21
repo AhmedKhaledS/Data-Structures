@@ -104,17 +104,17 @@ public class Graph<T> implements IGraph {
 
 	@Override
 	public void runDijkstra(int src, int[] distances) {
-
+		Dijkstra.run(this, src, distances);
 	}
 
 
 	@Override
 	public ArrayList<Integer> getDijkstraProcessedOrder() {
-		return null;
+		return Dijkstra.getProcessedOrder();
 	}
 
 	@Override
-	public int[] runBellmanFord(int src, int[] distances) {
+	public boolean runBellmanFord(int src, int[] distances) {
 		return BellmanFord.run(this, src, distances);
 	}
 

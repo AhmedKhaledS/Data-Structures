@@ -13,6 +13,8 @@ public class BellmanFord {
 	 */
 	static boolean containsNegativeCycles = false;
 
+	private static int[] shortestDistanceArray;
+
 	/**
 	 * Runs Bellman-Ford Single-Source-Shortest-Path algorithm to the
 	 * assigned graph and returns the the shortest distances from the source
@@ -24,7 +26,7 @@ public class BellmanFord {
 	 * @return Returns the shortest path array from the source node to all
 	 *         other nodes.
 	 */
-	public static int[] run(Graph graph, int src, int[] distances) {
+	public static boolean run(Graph graph, int src, int[] distances) {
 		for (int i = 0; i < graph.size(); i++) {
 			distances[i] = Integer.MAX_VALUE;
 		}
@@ -57,6 +59,16 @@ public class BellmanFord {
 				break;
 			}
 		}
-		return distances;
+		shortestDistanceArray = distances;
+		return containsNegativeCycles;
+	}
+
+	/**
+	 * Gets the array holding the shortest distance from source node to all
+	 * other nodes.
+	 * @return Return the array of distances from the source to other nodes.
+	 */
+	public static int[] getShortestDistanceArray() {
+		return shortestDistanceArray;
 	}
 }

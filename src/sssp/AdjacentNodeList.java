@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class AdjacentNodeList {
 
-	private List<Pair<Integer, Double>> adjNodes;
+	private List<Pair<Integer, Integer>> adjNodes;
 	private List<Integer> adjacentNodes;
 
 
@@ -20,7 +20,7 @@ public class AdjacentNodeList {
 	 * Constructor to initialize the set of neighbor nodes with the passed data.
 	 * @param nodes the array-list that holds the neighbour nodes with data.
 	 */
-	public AdjacentNodeList(ArrayList<Pair<Integer, Double>> nodes) {
+	public AdjacentNodeList(ArrayList<Pair<Integer, Integer>> nodes) {
 		adjNodes = nodes;
 		adjacentNodes = new ArrayList<Integer>();
 		for (Pair pr : nodes) {
@@ -41,7 +41,7 @@ public class AdjacentNodeList {
 	 * @param node The new node-ID to be added.
 	 * @param weight The weight of this node w.r.t the parent node.
 	 */
-	public void addNode(int node, double weight) {
+	public void addNode(int node, int weight) {
 		adjNodes.add(new Pair<>(node, weight));
 		adjacentNodes.add(node);
 	}
@@ -51,8 +51,12 @@ public class AdjacentNodeList {
 	 * @param index The node number linked by the parent node.
 	 * @return Returns the pre-specified node holding its data.
 	 */
-	public Pair<Integer, Double> getAdjNode(int index) {
+	public Pair<Integer, Integer> getAdjNode(int index) {
 		return this.adjNodes.get(index);
+	}
+
+	public List<Pair<Integer, Integer>> getAdjNodesWithData() {
+		return adjNodes;
 	}
 
 }

@@ -1,5 +1,6 @@
 package sssp;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -21,10 +22,16 @@ public class test {
 			gp.addEdge(src, dest, weight);
 		}
 		int[] dist = new int[n];
-		System.out.println(BellmanFord.containsNegativeCycles);
-		int[] distances = gp.runBellmanFord(0, dist);
+		gp.runDijkstra(0, dist);
+		//System.out.println(gp.runBellmanFord(0, dist));
+		int[] distances = Dijkstra.getShortestDistanceArray();
 		for (int i = 0; i < gp.size(); i++) {
 			System.out.print(distances[i] + " ");
+		}
+		ArrayList<Integer> processedOrder = Dijkstra.getProcessedOrder();
+		System.out.println();
+		for (Integer x : processedOrder) {
+			System.out.print(x + " ");
 		}
 	}
 }

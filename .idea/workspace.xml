@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1aefd9ef-32fb-49ce-9387-0a20e81b23e8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/data-structures/sssp/AdjacentNodeList.class" afterPath="$PROJECT_DIR$/out/production/data-structures/sssp/AdjacentNodeList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/data-structures/sssp/BellmanFord.class" afterPath="$PROJECT_DIR$/out/production/data-structures/sssp/BellmanFord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/data-structures/sssp/Dijkstra.class" afterPath="$PROJECT_DIR$/out/production/data-structures/sssp/Dijkstra.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/data-structures/sssp/Graph.class" afterPath="$PROJECT_DIR$/out/production/data-structures/sssp/Graph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/data-structures/sssp/IGraph.class" afterPath="$PROJECT_DIR$/out/production/data-structures/sssp/IGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/data-structures/sssp/test.class" afterPath="$PROJECT_DIR$/out/production/data-structures/sssp/test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sssp/AdjacentNodeList.java" afterPath="$PROJECT_DIR$/src/sssp/AdjacentNodeList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sssp/BellmanFord.java" afterPath="$PROJECT_DIR$/src/sssp/BellmanFord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sssp/Dijkstra.java" afterPath="$PROJECT_DIR$/src/sssp/Dijkstra.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sssp/Graph.java" afterPath="$PROJECT_DIR$/src/sssp/Graph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sssp/IGraph.java" afterPath="$PROJECT_DIR$/src/sssp/IGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sssp/test.java" afterPath="$PROJECT_DIR$/src/sssp/test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,18 +33,42 @@
       <file leaf-file-name="BellmanFord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sssp/BellmanFord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-156">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+            <state relative-caret-position="1082">
+              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sssp/Dijkstra.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="65" column="50" lean-forward="false" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1881#1882#0" expanded="true" />
+                <element signature="e#1909#1910#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PriorityQueue.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/util/PriorityQueue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sssp/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="79" column="56" lean-forward="false" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+            <state relative-caret-position="459">
+              <caret line="61" column="36" lean-forward="false" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1625#1626#0" expanded="true" />
@@ -46,19 +79,7 @@
                 <element signature="e#2318#2319#0" expanded="true" />
                 <element signature="e#2562#2563#0" expanded="true" />
                 <element signature="e#2593#2594#0" expanded="true" />
-                <element signature="e#2844#2845#0" expanded="true" />
-                <element signature="e#2862#2863#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sssp/Dijkstra.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -66,8 +87,8 @@
       <file leaf-file-name="IGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sssp/IGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state relative-caret-position="400">
+              <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -76,9 +97,11 @@
       <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sssp/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="414">
+              <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,10 +109,12 @@
       <file leaf-file-name="AdjacentNodeList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sssp/AdjacentNodeList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+            <state relative-caret-position="576">
+              <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1530#1531#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,7 +133,7 @@
       <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sssp/Edge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-156">
+            <state relative-caret-position="-44">
               <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#773#774#0" expanded="true" />
@@ -139,6 +164,8 @@
       <find>inser</find>
       <find>height</find>
       <find>do</find>
+      <find>p</find>
+      <find>att</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,8 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/Heap.java" />
         <option value="$PROJECT_DIR$/src/Heap/Type.java" />
         <option value="$PROJECT_DIR$/src/Heap/MinHeap.java" />
         <option value="$PROJECT_DIR$/src/Heap/Test.java" />
@@ -199,10 +224,12 @@
         <option value="$PROJECT_DIR$/src/sssp/Pair.java" />
         <option value="$PROJECT_DIR$/src/sssp/Edge.java" />
         <option value="$PROJECT_DIR$/src/sssp/IGraph.java" />
-        <option value="$PROJECT_DIR$/src/sssp/test.java" />
         <option value="$PROJECT_DIR$/src/sssp/BellmanFord.java" />
+        <option value="$PROJECT_DIR$/src/sssp/Dijkestra.java" />
         <option value="$PROJECT_DIR$/src/sssp/AdjacentNodeList.java" />
         <option value="$PROJECT_DIR$/src/sssp/Graph.java" />
+        <option value="$PROJECT_DIR$/src/sssp/test.java" />
+        <option value="$PROJECT_DIR$/src/sssp/Dijkstra.java" />
       </list>
     </option>
   </component>
@@ -381,7 +408,7 @@
     <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="sssp.*" />
+          <option name="PATTERN" value="sssp.Dijkstra" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -654,14 +681,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992464" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33295584" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33295584" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33069083" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33069083" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30418456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -694,17 +721,18 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sssp/Graph.java</url>
-          <line>48</line>
+          <url>file://$PROJECT_DIR$/src/sssp/Dijkstra.java</url>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((Heap.MaxHeap)mx).heap" custom="Heap.MaxHeap" />
+        <watch expression="distances[child.att1]" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -713,13 +741,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/exceptions/HeapIsEmptyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/lang/reflect/Array.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1078">
@@ -943,7 +964,7 @@
         <state relative-caret-position="664">
           <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -958,55 +979,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sssp/Dijkstra.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/util/PriorityQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sssp/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sssp/IGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sssp/BellmanFord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        <state relative-caret-position="230">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sssp/AdjacentNodeList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+        <state relative-caret-position="576">
+          <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sssp/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#773#774#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1019,10 +1007,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sssp/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sssp/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="79" column="56" lean-forward="false" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+        <state relative-caret-position="459">
+          <caret line="61" column="36" lean-forward="false" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1625#1626#0" expanded="true" />
@@ -1033,8 +1032,44 @@
             <element signature="e#2318#2319#0" expanded="true" />
             <element signature="e#2562#2563#0" expanded="true" />
             <element signature="e#2593#2594#0" expanded="true" />
-            <element signature="e#2844#2845#0" expanded="true" />
-            <element signature="e#2862#2863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sssp/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sssp/IGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sssp/BellmanFord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1082">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sssp/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="65" column="50" lean-forward="false" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1909#1910#0" expanded="true" />
           </folding>
         </state>
       </provider>
